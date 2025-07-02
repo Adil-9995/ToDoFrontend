@@ -34,9 +34,9 @@ This project was built from scratch, with the following key contributions by me:
 ---
 
 ## 📸 Screenshots
-![image](https://github.com/user-attachments/assets/0bc70cc2-8a66-4697-a589-493e053d74f3)
-![image](https://github.com/user-attachments/assets/88fd6795-ca3c-40dd-9c0d-9af1575d0d5e)
-![image](https://github.com/user-attachments/assets/434bf54a-5acc-43be-bb9c-d31090301fe8)
+![image](https://github.com/user-attachments/assets/356c6461-17bb-4446-b289-eaa33a61d706)
+![image](https://github.com/user-attachments/assets/5c67dd8d-60f3-496c-bd12-dfdd7bd16d90)
+
 
 
 

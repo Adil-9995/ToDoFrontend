@@ -26,8 +26,8 @@ This project was built from scratch, with the following key contributions by me:
 
 ## 🛠 Tech Stack
 
-- **Frontend**: React.js, Tailwind CSS, React Router
-- **Backend**: Node.js, Express.js, MongoDB
+- **Frontend**: JavaScript
+- **Backend**: MongoDB
 - **Authentication**: JSON Web Tokens (JWT), bcryptjs
 - **Deployment**: Render
 

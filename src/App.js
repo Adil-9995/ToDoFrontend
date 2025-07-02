@@ -92,14 +92,17 @@ function App() {
       (filterPriority === "all" || task.priority === filterPriority)
   );
 
+  /* ---------- MAIN LOGGED‑IN UI ---------- */
   const MainApp = () => (
-    <div className="min-h-screen bg-orange-50 flex flex-col">
-      <nav className="bg-orange-500 text-white px-6 py-4 flex justify-between items-center shadow-md">
+    <div className="min-h-screen bg-blue-50 flex flex-col">
+      {/* NAVBAR */}
+      <nav className="bg-blue-500 text-white px-6 py-4 flex justify-between items-center shadow-md">
         <ul className="flex space-x-4">
           <li>
             <a
               href="#"
-              className="px-4 py-2 rounded-full font-semibold transition-colors duration-200 hover:bg-orange-600 bg-orange-100 text-orange-700 shadow-sm"
+              className="px-4 py-2 rounded-full font-semibold transition-colors duration-200
+                         hover:bg-blue-600 bg-blue-100 text-blue-700 shadow-sm"
             >
               Home
             </a>
@@ -113,11 +116,13 @@ function App() {
         </button>
       </nav>
 
+      {/* MAIN CONTENT */}
       <main className="flex-1 p-8">
-        <h1 className="text-4xl font-extrabold text-center mb-8 text-orange-600 drop-shadow">
+        <h1 className="text-4xl font-extrabold text-center mb-8 text-blue-600 drop-shadow">
           MERN To‑Do App
         </h1>
 
+        {/* ADD‑TASK FORM */}
         <form
           onSubmit={(e) => {
             e.preventDefault();
@@ -131,21 +136,23 @@ function App() {
         >
           <input
             type="text"
-            className="p-3 border-2 border-orange-300 rounded-lg w-2/3 focus:outline-none focus:ring-2 focus:ring-orange-400"
+            className="p-3 border-2 border-blue-300 rounded-lg w-2/3
+                       focus:outline-none focus:ring-2 focus:ring-blue-400"
             placeholder="Add a task"
           />
           <button
             type="submit"
-            className="px-6 py-2 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-lg"
+            className="px-6 py-2 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-lg"
           >
             Add
           </button>
         </form>
 
+        {/* FILTERS */}
         <div className="mb-6 flex gap-4 justify-center">
           <select
             onChange={(e) => setFilterStatus(e.target.value)}
-            className="p-2 border-2 border-orange-300 rounded-lg"
+            className="p-2 border-2 border-blue-300 rounded-lg"
             value={filterStatus}
           >
             <option value="all">All Status</option>
@@ -154,7 +161,7 @@ function App() {
           </select>
           <select
             onChange={(e) => setFilterPriority(e.target.value)}
-            className="p-2 border-2 border-orange-300 rounded-lg"
+            className="p-2 border-2 border-blue-300 rounded-lg"
             value={filterPriority}
           >
             <option value="all">All Priorities</option>
@@ -164,14 +171,16 @@ function App() {
           </select>
         </div>
 
+        {/* TASK LIST */}
         <ul className="space-y-4">
           {filteredTasks.map((task) => (
             <li
               key={task._id}
-              className="p-4 bg-white rounded-xl shadow flex flex-col md:flex-row md:items-center md:justify-between gap-4 hover:bg-orange-100 transition"
+              className="p-4 bg-white rounded-xl shadow flex flex-col md:flex-row md:items-center
+                         md:justify-between gap-4 hover:bg-blue-100 transition"
             >
               <div className="flex-1">
-                <span className="text-lg text-orange-800">{task.text}</span>
+                <span className="text-lg text-blue-800">{task.text}</span>
                 <span className="ml-2 text-sm text-gray-500">
                   ({task.status}, {task.priority})
                 </span>
@@ -187,15 +196,17 @@ function App() {
                 >
                   {task.status === "pending" ? "Mark Complete" : "Mark Pending"}
                 </button>
+
                 <select
                   value={task.priority}
                   onChange={(e) => updateTaskPriority(task._id, e.target.value)}
-                  className="p-2 border-2 border-orange-300 rounded-lg"
+                  className="p-2 border-2 border-blue-300 rounded-lg"
                 >
                   <option value="low">Low</option>
                   <option value="medium">Medium</option>
                   <option value="high">High</option>
                 </select>
+
                 <button
                   onClick={() => deleteTask(task._id)}
                   className="px-3 py-1 bg-red-500 hover:bg-red-600 text-white font-bold rounded-full"
@@ -208,12 +219,14 @@ function App() {
         </ul>
       </main>
 
-      <footer className="bg-orange-500 text-white p-4 mt-auto text-center shadow-inner">
+      {/* FOOTER */}
+      <footer className="bg-blue-500 text-white p-4 mt-auto text-center shadow-inner">
         © 2025 Your To‑Do App
       </footer>
     </div>
   );
 
+  /* ---------- ROUTING ---------- */
   return (
     <Router>
       <Routes>
@@ -225,7 +238,7 @@ function App() {
         />
         <Route
           path="*"
-          element={<h2 className="text-center mt-10">404 - Page Not Found</h2>}
+          element={<h2 className="text-center mt-10">404 – Page Not Found</h2>}
         />
       </Routes>
     </Router>
